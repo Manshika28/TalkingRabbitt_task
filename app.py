@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 from pandasai import SmartDataframe
 from pandasai.llm import OpenAI
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 
 # 1. Page Identity
@@ -57,3 +60,4 @@ if uploaded_file and api_key:
 else:
 
     st.info("Please enter your API Key and upload a CSV to begin.")
+
