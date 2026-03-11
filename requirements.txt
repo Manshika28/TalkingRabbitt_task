@@ -1,6 +1,5 @@
-streamlit==1.33.0
-pandas==1.5.3
-pandasai==2.0.41
-pandasai-litellm
-matplotlib==3.7.2
-openai
+streamlit
+pandas
+pandasai
+matplotlib
+pillow
