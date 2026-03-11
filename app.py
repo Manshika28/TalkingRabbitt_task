@@ -32,11 +32,21 @@ if uploaded_file and api_key:
 
     if query:
         with st.spinner("Rabbitt is thinking..."):
-            response = agent.chat(query)
+            try:
+                response = agent.chat(query)
+                st.write("### 💡 Insight")
+                st.success(response)
+            except Exception as e:
+                st.error("Something went wrong while processing the query.")
             
             # Display results
-            st.write("### 💡 Insight")
-            st.success(response)
+            st.write("### Example Questions")
+            st.markdown("""
+            - Which region has the highest revenue?
+            - Show revenue by region
+            - What is the average revenue?
+            - Plot revenue by quarter
+            """)
             
             # Automated Visualization Check
             # PandasAI saves the last generated plot to 'exports/charts'
@@ -45,4 +55,5 @@ if uploaded_file and api_key:
             if fig.get_axes(): # Check if a plot was actually created
                 st.pyplot(fig)
 else:
+
     st.info("Please enter your API Key and upload a CSV to begin.")
