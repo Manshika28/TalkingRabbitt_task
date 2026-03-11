@@ -1,4 +1,5 @@
-streamlit
-pandas
-pandasai
-matplotlib
+streamlit==1.33.0
+pandas==2.2.2
+pandasai==2.0.41
+matplotlib==3.8.4
+openai
